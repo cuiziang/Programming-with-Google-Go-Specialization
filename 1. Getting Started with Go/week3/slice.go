@@ -20,6 +20,7 @@ func main() {
 
 		if i < 2 {
 			i++
+
 			sli[i] = ne
 		} else {
 			sli = append(sli, ne)
