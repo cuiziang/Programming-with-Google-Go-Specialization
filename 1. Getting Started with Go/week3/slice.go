@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strconv"
 )
 
@@ -26,6 +27,8 @@ func main() {
 			sli = append(sli, ne)
 		}
 	}
+
+	sort.Ints(sli)
 
 	for i, v := range sli {
 		fmt.Printf("A[%d]: %d\n", i, v)
