@@ -1,21 +1,27 @@
 package main
 
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
+	"os"
 )
 
 func main() {
 	var name, add string
+	scanner := bufio.NewScanner(os.Stdin)
 
 	fmt.Print("Enter a name:\n")
-	_, _ = fmt.Scanln(&name)
-
+	if scanner.Scan() {
+		name = scanner.Text()
+	}
 	fmt.Print("Enter a add:\n")
-	_, _ = fmt.Scanln(&add)
-
+	if scanner.Scan() {
+		add = scanner.Text()
+	}
 	addMap := map[string]string{
-		name: add,
+		"name":    name,
+		"address": add,
 	}
 
 	addJosn, _ := json.Marshal(addMap)
