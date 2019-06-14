@@ -13,7 +13,11 @@ type Name struct {
 }
 
 func main() {
-	file, _ := os.Open("1. Getting Started with Go/week4/foo.txt")
+	var s string
+	fmt.Print("Enter a file\n")
+	_, _ = fmt.Scanln(&s)
+
+	file, _ := os.Open(s)
 	defer file.Close()
 	names := make([]Name, 0)
 	scanner := bufio.NewScanner(file)
