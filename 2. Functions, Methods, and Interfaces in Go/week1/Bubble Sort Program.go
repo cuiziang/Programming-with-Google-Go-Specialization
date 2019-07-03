@@ -24,6 +24,9 @@ func main() {
 	}
 
 	BubbleSort(arr[:])
-	fmt.Print(arr)
+
+	for i := 0; i < 10; i++ {
+		fmt.Println(arr[i])
+	}
 
 }
